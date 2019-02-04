@@ -1,0 +1,35 @@
+server:
+  port: 8087
+  
+spring:
+  application:
+    name: zuulproxyui
+    
+    
+zuul:
+  routes:
+    customerservice:
+      path: /api/customers/**
+      service-id: customerservice
+      strip-prefix: false  
+      
+    customerservice1:
+      path: /nonrest/api/customers/**
+      service-id: customerservice
+      strip-prefix: false
+      
+    customerservice2:
+      path: /rest/api/customers/**
+      service-id: customerservice
+      strip-prefix: false    
+      
+    catalog:
+      path: /api/catalog/**
+      service-id: catalog
+      strip-prefix: false
+      
+    order:
+      path: /api/orders/**
+      service-id: order    
+      strip-prefix: false
+          

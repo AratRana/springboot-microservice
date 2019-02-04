@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    include:
+    - native
+    active:
+    - native
+    
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+          - file:///c:/microservices_workspace/config
+server:
+  port: 8083

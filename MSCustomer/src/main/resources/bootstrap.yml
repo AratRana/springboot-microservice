@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: customerservice
+  profiles:
+    active:
+    - development
+  cloud:
+    config:
+      uri:
+      - http://localhost:8083
+      
+  main:
+    allow-bean-definition-overriding: true
