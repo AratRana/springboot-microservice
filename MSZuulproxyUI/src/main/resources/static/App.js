@@ -29,7 +29,10 @@ var Content = React.createClass({
     return (
       <div>
         {this.props.activeTab.name === 'Customer' ? 
-        		<iframe src="http://localhost:8087/customerui/" width="100%" height="1000px" frameborder="0" className="panel panel-success" scrolling="no"/>
+        		<section className="panel panel-success" id="customerTab">
+        			<h2 className="panel-heading">Customers</h2>
+        			<iframe src="http://localhost:8087/customerui/" width="100%" height="1000px" style={{border:0}} className="panel panel-success" scrolling="no"/>
+        		</section>		
         :null} 
         {this.props.activeTab.name === 'Order' ? 
         		<iframe src="http://localhost:8087/ui/order/" width="100%" height="1000px" frameborder="0" className="panel panel-success" scrolling="no"/>
