@@ -85,6 +85,7 @@
 					ng-click="getCustomer()">Details</a>
 			</div>
 		</div>	 -->
+		</div>	
 		<iframe id="iframeContent" ng-src="{{url}}" style="width: 100%; height: 400px; border: 0"></iframe>	
 	</div>
 	
