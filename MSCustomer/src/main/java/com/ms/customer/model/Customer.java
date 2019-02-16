@@ -1,115 +1,41 @@
 package com.ms.customer.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
-import javax.validation.constraints.Email;
-
-@Entity
 public class Customer {
-
-	@Id
-	@GeneratedValue
-	private Long id;
-
-	@Column(nullable = false)
-	private String name;
-
-	@Column(nullable = false)
-	private String firstname;
-
-	@Column(nullable = false)
-	@Email
-	private String email;
-
-	@Column(nullable = false)
-	private String street;
-
-	@Column(nullable = false)
-	private String city;
-
-	public Customer() {
-		super();
-		id = 0l;
+	
+	private int custNo;
+	private String custName;
+	private String country;
+	
+	public Customer() {		
+	}
+	
+	public Customer(int custNumber, String custName, String country) {
+		this.custNo = custNumber;
+		this.custName = custName;
+		this.country = country;
 	}
 
-	public Customer(String firstname, String name, String email, String street,
-			String city) {
-		super();
-		this.name = name;
-		this.firstname = firstname;
-		this.email = email;
-		this.street = street;
-		this.city = city;
+	public int getCustNo() {
+		return custNo;
 	}
 
-	public String getEmail() {
-		return email;
+	public void setCustNo(int custNo) {
+		this.custNo = custNo;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public String getCustName() {
+		return custName;
 	}
 
-	public String getName() {
-		return name;
+	public void setCustName(String custName) {
+		this.custName = custName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getCountry() {
+		return country;
 	}
 
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getStreet() {
-		return street;
-	}
-
-	public void setStreet(String street) {
-		this.street = street;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this);
-	}
-
-	@Override
-	public int hashCode() {
-		return HashCodeBuilder.reflectionHashCode(this);
-
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		return EqualsBuilder.reflectionEquals(this, obj);
-	}
-
+	public void setCountry(String country) {
+		this.country = country;
+	}	
 }

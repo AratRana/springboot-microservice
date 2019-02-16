@@ -4,12 +4,15 @@ server:
 spring:
   application:
     name: zuulproxyui
-    
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp  
     
 zuul:
   routes:
     customerservice:
-      path: /api/customers/**
+      path: /rest/api/customers/**
       service-id: customerservice
       strip-prefix: false  
       
@@ -18,10 +21,10 @@ zuul:
       service-id: customerservice
       strip-prefix: false
       
-    customerservice2:
-      path: /rest/api/customers/**
-      service-id: customerservice
-      strip-prefix: false    
+    customerserviceui:
+       path: /ui/**
+       service-id: customerui
+       strip-prefix: false  
       
     catalog:
       path: /api/catalog/**

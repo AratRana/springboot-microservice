@@ -1,0 +1,27 @@
+server:
+  port: 8098
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  application:
+    name: UI
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+
+zuul:
+  routes:
+    platformframework:
+      path: /api/platform/**
+      service-id: platformframework
+      strip-prefix: false
+    
+ribbon:
+  eager-load:
+    enabled: true
+  ReadTimeout: 60000
+  ConnectTimeout: 60000

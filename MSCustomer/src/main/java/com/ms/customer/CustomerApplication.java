@@ -23,12 +23,12 @@ public class CustomerApplication {
 		this.customerRepository = customerRepository;
 	}
 
-	@PostConstruct
+	/*@PostConstruct
 	public void generateTestData() {
 		customerRepository
 				.save(new Customer("Eberhard", "Wolff", "eberhard.wolff@gmail.com", "Unter den Linden", "Berlin"));
 		customerRepository.save(new Customer("Rod", "Johnson", "rod@somewhere.com", "Market Street", "San Francisco"));
-	}
+	}*/
 
 	public static void main(String[] args) {
 		SpringApplication.run(CustomerApplication.class, args);

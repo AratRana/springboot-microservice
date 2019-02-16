@@ -10,6 +10,6 @@ spring:
       server:
         native:
           search-locations:
-          - file:///c:/microservices_workspace/config
+          - file:///C:/arat/R_N_D/microservices_workspace/config
 server:
   port: 8083

@@ -26,17 +26,9 @@
 			$scope.customer = $scope.customers.get({
 				customerId : $scope.customer.id
 			});
-		}
-
+		}		
 		$scope.getApp = function(appUrl) {
-			$http({
-				method : "GET",
-				url : appUrl
-			}).then(function mySuccess(response) {
-				$("#divContent").html(response.data);
-			}, function myError(response) {
-				$scope.customercontent = response.statusText;
-			});
+			$scope.url = appUrl;
 		}
 	});
 	/*]]>*/
@@ -58,6 +50,8 @@
 						ng-click="getApp('/api/catalog/')">Catalog</a></li>
 					<li><a href="#" id="order_href_id"
 						ng-click="getApp('/api/orders/')">Order</a></li>
+					<li><a href="#" id="order_href_id"
+						ng-click="getApp('/ui/')">New Customer</a></li>	
 				</ul>
 				<form class="navbar-form navbar-left" action="#">
 					<div class="input-group">
@@ -76,7 +70,7 @@
 	</div>
 	<div class="container" id="body_panel">
 		<h1 class="col-sm-12">Customer Details</h1>
-		<div class="row" id="customer_test_id">
+		<!-- <div class="row" id="customer_test_id">
 			<div class="col-sm-12">
 				<label class="col-sm-3">ID:</label> <span>{{customer.id}}</span>
 			</div>
@@ -90,8 +84,9 @@
 					ng-change="getCustomer()" /> <a class="btn btn-default" href="#"
 					ng-click="getCustomer()">Details</a>
 			</div>
-		</div>
-		<div id="divContent"></div>
+		</div>	 -->
+		<iframe id="iframeContent" ng-src="{{url}}" style="width: 100%; height: 400px; border: 0"></iframe>	
 	</div>
+	
 </body>
 </html>
