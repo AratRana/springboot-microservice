@@ -17,6 +17,38 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script type="text/babel" src="./App.js"></script>
+<script>
+	function resizeIframe(obj) {
+		obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+	}
+</script>
+<style>
+#app {
+	height: 100vh;
+}
+
+.nav {
+	padding: 10px 10px 0;
+	background: #DAE8EB;
+	color: #787F7D;
+}
+/*.nav-tabs > li > a {padding-top:1px !important; padding-bottom:1px !important;}*/
+.is-visible {
+	border: solid 1px red;
+}
+
+section {
+	margin: 20px;
+}
+
+h2, p {
+	margin: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+</style>
 </head>
 <body>
 <div id="app"></div>

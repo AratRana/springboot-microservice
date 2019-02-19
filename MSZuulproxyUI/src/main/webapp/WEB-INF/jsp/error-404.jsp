@@ -7,6 +7,6 @@
 <title>Oops! something went wrong!</title>
 </head>
 <body>
-	<h1>Oops! server is down!</h1>
+	<h1>Oops! server is down.</h1>
 </body>
 </html>

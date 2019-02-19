@@ -35,4 +35,10 @@ zuul:
       path: /api/orders/**
       service-id: order    
       strip-prefix: false
+      
+ribbon:
+  eager-load:
+    enabled: true
+  ReadTimeout: 60000
+  ConnectTimeout: 60000      
           
