@@ -1,4 +1,4 @@
-package com.ms.circuitbreaker.hystrix;
+/*package com.ms.circuitbreaker.hystrix;
 
 import java.net.URI;
 import java.util.Map;
@@ -45,3 +45,4 @@ public class HystrixImpl {
 		return new Customer(0,"not found");
 	}
 }
+*/

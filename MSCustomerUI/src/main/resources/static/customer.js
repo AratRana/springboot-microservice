@@ -52,6 +52,6 @@ function onInsertRow(row) {
         }
     });
    ReactDOM.render(
-        <RolesGridTable dataUrl="/rest/api/customers/get-cust-info"/>,
+        <RolesGridTable dataUrl="/api/hystrix/rest/api/platform/customers/all"/>,
         document.getElementById('root')
     );

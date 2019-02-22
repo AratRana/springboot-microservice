@@ -36,6 +36,11 @@ zuul:
       service-id: order    
       strip-prefix: false
       
+    hystrixframework:
+      path: /api/hystrix/**
+      service-id: mshystrix
+      strip-prefix: false  
+      
 ribbon:
   eager-load:
     enabled: true

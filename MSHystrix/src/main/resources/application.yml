@@ -4,3 +4,12 @@ server:
 spring:
   application:
     name: mshystrix  
+    
+    
+api:
+   zuul:
+      url: http://localhost:8087    
+    
+feign:
+  hystrix:
+    enabled: true    

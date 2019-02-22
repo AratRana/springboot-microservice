@@ -1,4 +1,4 @@
-package com.ms.customer;
+package com.ms.customer.props;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

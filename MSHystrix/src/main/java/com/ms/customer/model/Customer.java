@@ -1,31 +1,41 @@
 package com.ms.customer.model;
 
 public class Customer {
-
-	private int id;
-	private String name;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Customer(int id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
-
 	
+	private int custNo;
+	private String custName;
+	private String country;
+	
+	public Customer() {		
+	}
+	
+	public Customer(int custNumber, String custName, String country) {
+		this.custNo = custNumber;
+		this.custName = custName;
+		this.country = country;
+	}
+
+	public int getCustNo() {
+		return custNo;
+	}
+
+	public void setCustNo(int custNo) {
+		this.custNo = custNo;
+	}
+
+	public String getCustName() {
+		return custName;
+	}
+
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}	
 }

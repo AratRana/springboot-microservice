@@ -1,4 +1,4 @@
-package com.ms.customer.repository;
+/*package com.ms.customer.repository;
 
 import java.util.List;
 
@@ -32,3 +32,4 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 	}
 
 }
+*/

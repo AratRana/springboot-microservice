@@ -1,4 +1,4 @@
-package com.ms.customer;
+package com.ms.customer.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,11 +7,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import com.ms.customer.model.Customer;
 
-@Service
+@Repository
 public class CustomerDao {
 
 	
@@ -20,7 +19,7 @@ public class CustomerDao {
 	
 	private static final String SQL = "select * from customers";
 	
-	public List<Customer> getCustomerData() {
+	public List<Customer> getAllCustomers() {
 		
 		List<Customer> customers = new ArrayList<Customer>();
 

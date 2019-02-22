@@ -16,12 +16,12 @@ import com.ms.customer.repository.CustomerRepository;
 @EnableDiscoveryClient
 public class CustomerApplication {
 
-	private final CustomerRepository customerRepository;
+	/*private final CustomerRepository customerRepository;
 
 	@Autowired
 	public CustomerApplication(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
-	}
+	}*/
 
 	/*@PostConstruct
 	public void generateTestData() {

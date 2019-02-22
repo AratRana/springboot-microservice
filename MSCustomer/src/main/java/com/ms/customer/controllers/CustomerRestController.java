@@ -7,11 +7,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ms.customer.dao.CustomerDao;
 import com.ms.customer.model.Customer;
 import com.ms.customer.repository.CustomerRepository;
 
 @RestController
-@RequestMapping("/rest/api/customers")
+@RequestMapping(value = "/rest/api/platform/customers")
 public class CustomerRestController {
 
 	@Value("${welcome.message}")
@@ -23,12 +24,12 @@ public class CustomerRestController {
 	}
 	
 	@Autowired
-	CustomerRepository customerRepository;
+	CustomerDao customerDao;
 	
-	@RequestMapping("/get-cust-info")
-	public List<Customer> customerInformation() {
+	@RequestMapping("/all")
+	public List<Customer> getCustomerInformation() {
 		
-		List<Customer> customers = customerRepository.getCustomerData();		 
+		List<Customer> customers = customerDao.getAllCustomers();		 
 		
 		return customers;
 	}

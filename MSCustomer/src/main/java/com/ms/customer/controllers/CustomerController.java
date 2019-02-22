@@ -18,18 +18,18 @@ import com.ms.customer.repository.CustomerRepository;
 @RequestMapping("/api/customers")
 public class CustomerController {
 
-	private CustomerRepository customerRepository;
+	/*private CustomerRepository customerRepository;
 
 	@Autowired
 	public CustomerController(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}
 
-	/*@RequestMapping(value = "/{id}.html", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+	@RequestMapping(value = "/{id}.html", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
 	public ModelAndView customer(@PathVariable("id") long id) {
 		return new ModelAndView("customer", "customer",
 				customerRepository.findById(id).get());
-	}*/
+	}
 
 	@RequestMapping("/")
 	public ModelAndView customerList() {
@@ -42,12 +42,12 @@ public class CustomerController {
 		return new ModelAndView("customer", "customer", new Customer());
 	}
 
-	/*@RequestMapping(value = "/form.html", method = RequestMethod.POST)
+	@RequestMapping(value = "/form.html", method = RequestMethod.POST)
 	public ModelAndView post(Customer customer, HttpServletRequest httpRequest) {
 		customer = customerRepository.save(customer);
 		return new ModelAndView("success");
 	}
-*/
+
 	@RequestMapping(value = "/{id}.html", method = RequestMethod.PUT)
 	public ModelAndView put(@PathVariable("id") long id, Customer customer,
 			HttpServletRequest httpRequest) {
@@ -60,6 +60,6 @@ public class CustomerController {
 	public ModelAndView delete(@PathVariable("id") long id) {
 		//customerRepository.deleteById(id);
 		return new ModelAndView("success");
-	}
+	}*/
 
 }

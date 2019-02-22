@@ -1,5 +1,8 @@
 package com.ms.circuitbreaker.hystrix;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,30 +13,27 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ms.customer.model.Customer;
 
 @RestController
+@RequestMapping(value="/api/hystrix")
 public class DemoController {
 
 	@Autowired
-	private HystrixImpl hystrixImpl;
+	private CustomerServiceClient customerServiceClient;
 
+	@Autowired
+	CustomerServiceRequest customerRequest;
+	
 	ResponseEntity<String> exchange = null;
 	
 	ResponseEntity<Customer> customerResponse = null;
 
-	@RequestMapping("/greet")
-	public String getAccounts() {
-		try {
-			exchange = hystrixImpl.greet();
-			return exchange.getBody() + "::status code :" + exchange.getStatusCode();
-		} catch (Exception e) {
-		}
-		return "";
-	}
-	
-	
-	@GetMapping("/rest/api/customers/{name}")
-	public Customer getCustomerById(@PathVariable final String name) {
-		/*customerResponse = hystrixImpl.getCustomerDetails(name);
-		return (Customer)customerResponse.getBody();*/
-		return hystrixImpl.getCustomerDetails(name);
+	@GetMapping("/rest/api/platform/customers/all")
+	public List<Customer> getAllCustomers() {
+		List<Customer> customers = new ArrayList<Customer>();
+		//Using zuul without feign
+		//customers = customerServiceClient.getAllCustomers();
+		
+		//using feign with zuul
+		customers = customerRequest.getCustomerInformation();
+		return customers;
 	}
 }
