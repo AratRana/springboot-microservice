@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: platformframework
+  main:
+    allow-bean-definition-overriding: true  
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/O12CR201
+    username: RNDUSER
+    password: RNDUSER
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    jndi-name: java:comp/env/TEST_ConnectionPool
+    tomcat:
+      initial-size: 5
+      max-wait: 20000
+      max-active: 30
+      max-idle: 15
+      min-idle: 8
+      default-auto-commit: true
+      
+connection:
+  jndiName: TEST_ConnectionPool      
+    
+server:
+  port: 8093
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  
+      
+ribbon:
+  eureka:
+    enabled: false

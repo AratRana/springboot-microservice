@@ -1,0 +1,79 @@
+server:
+  port: 8087
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  application:
+    name: zuulproxyui
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+
+zuul:
+  routes:
+    customerservice:
+      path: /rest/api/customers/**
+      service-id: customerservice
+      strip-prefix: false
+
+    customerservice1:
+      path: /nonrest/api/customers/**
+      service-id: customerservice
+      strip-prefix: false
+
+    catalog:
+      path: /api/catalog/**
+      service-id: catalog
+      strip-prefix: false
+
+    order:
+      path: /api/orders/**
+      service-id: order
+      strip-prefix: false
+
+    platformframework:
+      path: /rest/api/platform/**
+      service-id: platformframework
+      strip-prefix: false
+
+    hystrixframework:
+      path: /api/hystrix/**
+      service-id: mshystrix
+      strip-prefix: false
+      
+    customerui:
+      path: /customerui/**
+      service-id: customerui
+      strip-prefix: false  
+
+    enterpriseUI:
+      path: /enterpriseui/**
+      service-id: enterprise
+      strip-prefix: false  
+  ignored-services:
+  - '*'
+  ignored-headers:
+  - Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+  
+ 
+  #prefix: /jda/
+  #host:
+    #connect-timeout-millis: 60000
+    #socket-timeout-millis: 60000
+
+ribbon:
+  eager-load:
+    enabled: true
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  #eureka:
+    #enabled: false
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/    
